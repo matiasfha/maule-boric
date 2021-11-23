@@ -1,73 +1,54 @@
-<script>
-	import whatsapp from '../assets/whatsapp.png';
+<script context="module">
+	export async function load({ fetch }) {
+		try {
+			const response = await fetch('/api/grupos.json');
+			const calendarResponse = await fetch('/api/calendar.json');
+			if (response.ok && calendarResponse.ok) {
+				const json = await response.json();
+				const calendar = await calendarResponse.json();
 
-	const comunas = [
-		'Selecciona tu comuna',
-		'Cauquenes',
-		'Chanco',
-		'Pelluhue',
-		'Curicó',
-		'Hualañé',
-		'Licantén',
-		'Molina',
-		'Rauco',
-		'Romeral',
-		'Sagrada Familia',
-		'Teno',
-		'Vichuquén',
-		'Colbún',
-		'Linares',
-		'Longaví',
-		'Parral',
-		'Retiro',
-		'San Javier',
-		'Villa Alegre',
-		'Yerbas Buenas',
-		'Constitución',
-		'Curepto',
-		'Empedrado',
-		'Maule',
-		'Pelarco',
-		'Pencahue',
-		'Río Claro',
-		'San Clemente',
-		'San Rafael',
-		'Talca'
-	];
+				return {
+					props: {
+						grupos: json,
+						calendar
+					}
+				};
+			}
+
+			return {
+				status: response.status,
+				error: new Error(`Could not load grupos`)
+			};
+		} catch (e) {
+			console.error(e);
+		}
+	}
+</script>
+
+<script>
+	import SectionVolunteer from '../components/SectionVolunteer.svelte';
+
+	import whatsapp from '../assets/whatsapp.png';
+	export let grupos = [];
+	export let calendar;
 
 	const days = [...Array(31).keys()].map((i) => (i += 1));
-	const events = [
-		{
-			day: 1,
-			description: 'Some event'
-		},
-		{
-			day: 1,
-			description: 'Some event with long description that should be show as tooltip'
-		},
-		{
-			day: 1,
-			description: 'Some event'
-		},
-		{
-			day: 1,
-			description: 'Some event'
-		},
-		{
-			day: 1,
-			description: 'Some event'
-		},
-		{
-			day: 14,
-			description: 'Some event'
-		}
-	];
+
 	const calendarData = days.map((day) => {
 		return {
 			day,
-			events: events.filter((item) => item.day === day)
+			events: calendar.filter((item) => item.day === day)
 		};
 	});
+
+	const submitVolunteer = async (data) => {
+		const submit = await fetch('/api/voluntarios.json', {
+			method: 'POST',
+			body: JSON.stringify(data)
+		});
+		const response = await submit.json();
+		console.log(response);
+	};
 </script>
 
 <main class="w-full bg-lightGreen">
@@ -78,46 +59,7 @@
 			Únete al cambio que el Maule necesita
 		</h1>
 	</section>
-	<section class="relative h-[75rem] md:h-[35rem] bg-lightGreen" id="voluntarios">
-		<div class="h-12 bg-lightGreen curve relative -top-6" />
-		<div class="w-full grid grid-cols-1 md:grid-cols-2 px-8 md:px-24">
-			<div>
-				<h2 class="text-yellow text-6xl font-bold drop-shadow-xl ">
-					¿Quieres ser parte de esta campaña y cambiar Chile?
-				</h2>
-				<h3 class="text-5xl font-bold">Inscribete y participa</h3>
-			</div>
-			<form class="px-8 pt-8 md:pt-0 md:px-24 w-full">
-				<input
-					class="form-input mt-1 block w-full h-16 mb-8 rounded-md p-2 font-sans focus:outline-none focus:ring ring-green"
-					placeholder="Tu Nombre"
-				/>
-				<input
-					class="form-input mt-1 block w-full h-16 mb-8 rounded-md p-2 font-sans focus:outline-none focus:ring ring-green"
-					placeholder="Email"
-					type="email"
-				/>
-				<input
-					class="form-input mt-1 block w-full h-16 mb-8 rounded-md p-2 font-sans focus:outline-none focus:ring ring-green"
-					placeholder="Teléfono"
-					type="phone"
-				/>
-				<select
-					class="form-input mt-1 block w-full h-16 mb-8 rounded-md p-2 font-sans focus:outline-none focus:ring ring-green"
-					placeholder="Comuna"
-				>
-					{#each comunas as comuna}
-						<option value={comuna}>{comuna}</option>
-					{/each}
-				</select>
-				<button
-					type="submit"
-					class="bg-yellow text-4xl font-bold flex items-center justify-center mt-2 py-2 w-full rounded-sm drop-shadow-xl hover:bg-mindaro-700"
-					>#seguimos</button
-				>
-			</form>
-		</div>
-	</section>
+	<SectionVolunteer onSubmit={submitVolunteer} />
 
 	<section class="hero2 h-[40rem] bg-cover relative" />
 	<section class="h-[75rem] md:h-[35rem] relative bg-blue" id="kit">
@@ -156,30 +98,16 @@
 			</h2>
 
 			<ul class="list-none w-full md:w-[24rem] ml-0 md:ml-32 py-8 md:py-0">
-				<li class="block">
-					<a
-						href="/"
-						class="text-yellow text-2xl flex flex-row items-center justify-between py-2 drop-shadow-lg hover:text-mindaro-400  transition-all ease-in duration-200"
-					>
-						<img src={whatsapp} width="32px" alt="whatsapp" />Independientes Boric Maule</a
-					>
-				</li>
-				<li class="block">
-					<a
-						href="/"
-						class="text-yellow text-2xl flex flex-row items-center justify-between py-2 drop-shadow-lg hover:text-mindaro-400  transition-all ease-in duration-200"
-					>
-						<img src={whatsapp} width="32px" alt="whatsapp" />Difusión Comando Talca</a
-					>
-				</li>
-				<li class="block">
-					<a
-						href="/"
-						class="text-yellow text-2xl flex flex-row items-center justify-between py-2 drop-shadow-lg hover:text-mindaro-400  transition-all ease-in duration-200"
-					>
-						<img src={whatsapp} width="32px" alt="whatsapp" />Independientes con Boric</a
-					>
-				</li>
+				{#each grupos as grupo}
+					<li class="block">
+						<a
+							href={grupo.link}
+							class="text-yellow text-2xl flex flex-row items-center justify-between py-2 drop-shadow-lg hover:text-mindaro-400  transition-all ease-in duration-200"
+						>
+							<img src={whatsapp} width="32px" alt="whatsapp" />{grupo.name}</a
+						>
+					</li>
+				{/each}
 			</ul>
 		</div>
 	</section>
@@ -205,7 +133,7 @@
 							<p
 								class="bg-green p-2 text-white font-bold rounded-md text-sm w-44 overflow-hidden overflow-ellipsis min-h-full max-h-8"
 							>
-								{event.description}
+								{event.name}
 							</p>
 						{/each}
 					</div>
