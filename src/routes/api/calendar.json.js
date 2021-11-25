@@ -13,11 +13,11 @@ export async function get() {
         const result = response.results.map(page => {
             const { properties } = page
             return {
-                comuna: properties.Comuna.select.name,
-                contacto: properties.Contacto.rich_text[0].plain_text,
+                comuna: properties.Comuna?.select?.name ?? '',
+                contacto: properties.Contacto?.rich_text?.[0]?.plain_text ?? '',
                 date: properties.Date.date.start,
-                address: properties.Direccion.rich_text[0].plain_text,
-                name: properties.Name.title[0].plain_text,
+                address: properties.Direccion?.rich_text?.[0]?.plain_text ?? '',
+                name: properties.Name?.title?.[0]?.plain_text ?? '',
             }
         })
         return {
