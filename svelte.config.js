@@ -24,7 +24,10 @@ const config = {
 		target: '#svelte',
 		vite: {
 		// Options are optional
-			plugins: [svg()]
+			plugins: [svg()],
+			optimizeDeps: {
+				exclude: ['svelte-modals']
+			}
 		}
 	}
 };

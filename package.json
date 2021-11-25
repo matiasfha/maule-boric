@@ -47,6 +47,7 @@
 		"@fullcalendar/timegrid": "5.10.1",
 		"@notionhq/client": "0.4.9",
 		"bootstrap": "5.1.3",
+		"svelte-modals": "1.0.4",
 		"svelte-notifications": "0.9.91",
 		"svelte-select": "4.4.4",
 		"svelte-tooltip-action": "1.0.4",

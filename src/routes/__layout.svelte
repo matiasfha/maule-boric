@@ -18,7 +18,7 @@
 			</li>
 			<li class="text-yellow pl-6 font-bold"><a href="/#voluntarios">Voluntarios</a></li>
 			<li class="text-yellow pl-6 font-bold"><a href="/#calendario">Calendario Actividades</a></li>
-			<li class="text-yellow pl-6 font-bold"><a href="/apoderados">Apoderados</a></li>
+			<li class="text-yellow pl-6 font-bold"><a href="/">Apoderados</a></li>
 			<li class="text-yellow pl-6 font-bold">
 				<a href="https://drive.google.com/drive/folders/1vwqqSnxHIyv9wI617h8pUers1OudaBo0"
 					>Kit Gráfico</a
@@ -44,7 +44,7 @@
 					<a on:click={() => (open = false)} href="/#calendario">Calendario Actividades</a>
 				</li>
 				<li class="text-yellow pl-6 font-bold pt-4">
-					<a on:click={() => (open = false)} href="/apoderados">Apoderados</a>
+					<a on:click={() => (open = false)} href="/">Apoderados</a>
 				</li>
 				<li class="text-yellow pl-6 font-bold pt-4">
 					<a
@@ -72,8 +72,8 @@
 	<img src={Logo} alt="Boric Presidente" class="h-52" />
 	<p class="absolte bottom-0 text-sm">
 		This site is protected by hCaptcha and its
-		<a href="https://hcaptcha.com/privacy" class="underline">Privacy Policy</a> and
-		<a href="https://hcaptcha.com/terms" class="underline">Terms of Service</a> apply.
+		<a href="https://hcaptcha.com/privacy">Privacy Policy</a> and
+		<a href="https://hcaptcha.com/terms">Terms of Service</a> apply.
 	</p>
 </footer>
 

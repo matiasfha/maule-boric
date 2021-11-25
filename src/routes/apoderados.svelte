@@ -1,27 +1,26 @@
 <script>
-	import SectionVolunteer from '../components/SectionApoderado.svelte';
+	import { Modals, closeModal, openModal } from 'svelte-modals';
+	import ApoderadosModal from '../components/ApoderadosModal.svelte';
 
-	const submitVolunteer = async (data) => {
-		const submit = await fetch('/api/voluntarios.json', {
-			method: 'POST',
-			body: JSON.stringify(data)
-		});
-		return await submit.json();
-	};
+	function handleClick() {
+		openModal(ApoderadosModal);
+	}
 </script>
 
 <main class="w-full bg-blue">
+	<Modals>
+		<div slot="backdrop" on:click={closeModal} />
+	</Modals>
 	<section class="h-[35rem] flex flex-col items-center justify-center hero">
 		<h1 class="font-bold text-5xl md:text-7xl text-yellow text-shadow-lg px-8 md:px-0 text-center">
 			2.650 apoderados y apodedaradas se necesitan en el Maule
 		</h1>
-		<a
-			href="#apoderados"
+		<button
+			on:click={handleClick}
 			class="h-captcha bg-yellow text-4xl font-bold flex items-center justify-center py-2 w-44 px-8 mt-12 rounded-md drop-shadow-xl hover:bg-mindaro-700"
-			>Participa</a
+			>Participa</button
 		>
 	</section>
-	<SectionVolunteer onSubmit={submitVolunteer} />
 
 	<section class="h-[82rem] md:h-[35rem] relative bg-blue">
 		<div class="h-12 bg-blue curve relative -top-10" />
@@ -108,5 +107,15 @@
 	}
 	.curve {
 		clip-path: ellipse(65% 100% at 50% 100%);
+	}
+
+	.backdrop {
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		background: rgba(0, 0, 0, 0.5);
+		z-index: 2;
 	}
 </style>

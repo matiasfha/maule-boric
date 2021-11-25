@@ -26,12 +26,19 @@
 </script>
 
 <script>
+	import { Modals, closeModal, openModal } from 'svelte-modals';
+	import ApoderadosModal from '../components/ApoderadosModal.svelte';
+
 	import SectionVolunteer from '../components/SectionVolunteer.svelte';
 	import Calendar from '../components/Calendar.svelte';
 	import whatsapp from '../assets/whatsapp.png';
 
 	export let calendar = [];
 	export let grupos = [];
+
+	function handleClick() {
+		openModal(ApoderadosModal);
+	}
 
 	const submitVolunteer = async (data) => {
 		const submit = await fetch('/api/voluntarios.json', {
@@ -43,12 +50,20 @@
 </script>
 
 <main class="w-full bg-lightGreen">
-	<section class="h-[35rem] flex items-center justify-center hero">
+	<Modals>
+		<div slot="backdrop" on:click={closeModal} />
+	</Modals>
+	<section class="h-[35rem] flex flex-col items-center justify-center hero">
 		<h1
 			class="font-bold text-7xl mix-blend-exclusion text-white bg-black text-shadow-lg px-8 md:px-0"
 		>
 			Únete al cambio que el Maule necesita
 		</h1>
+		<button
+			on:click={handleClick}
+			class="h-captcha bg-yellow text-2xl font-bold flex items-center justify-center py-2 w-96 px-8 mt-12 rounded-md drop-shadow-xl hover:bg-mindaro-700"
+			>Participa como Apoderado</button
+		>
 	</section>
 	<SectionVolunteer onSubmit={submitVolunteer} />
 
