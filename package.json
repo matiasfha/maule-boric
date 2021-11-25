@@ -19,6 +19,7 @@
 		"@typescript-eslint/parser": "^4.31.1",
 		"autoprefixer": "^10.3.7",
 		"cssnano": "^5.0.8",
+		"dotenv": "10.0.0",
 		"eslint": "^7.32.0",
 		"eslint-config-prettier": "^8.3.0",
 		"eslint-plugin-svelte3": "^3.2.1",
@@ -33,11 +34,21 @@
 		"svelte-fullcalendar": "1.1.1",
 		"svelte-preprocess": "^4.9.8",
 		"tailwindcss": "^2.2.16",
+		"tailwindcss-textshadow": "2.1.3",
 		"tslib": "^2.3.1",
 		"typescript": "^4.4.3"
 	},
 	"type": "module",
 	"dependencies": {
-		"@notionhq/client": "0.4.9"
+		"@fortawesome/fontawesome-free": "5.15.4",
+		"@fullcalendar/bootstrap": "5.10.1",
+		"@fullcalendar/core": "5.10.1",
+		"@fullcalendar/list": "5.10.1",
+		"@fullcalendar/timegrid": "5.10.1",
+		"@notionhq/client": "0.4.9",
+		"bootstrap": "5.1.3",
+		"svelte-notifications": "0.9.91",
+		"svelte-tooltip-action": "1.0.4",
+		"tippy.js": "6.3.7"
 	}
 }

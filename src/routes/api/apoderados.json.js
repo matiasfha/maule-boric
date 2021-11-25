@@ -2,7 +2,7 @@ import { Client } from "@notionhq/client"
 
 const notion = new Client({ auth: import.meta.env.VITE_NOTION_TOKEN ?? '' })
 
-const databaseId = import.meta.env.VITE_NOTION_DATABASE_VOLUNTARIOS_ID
+const databaseId = import.meta.env.VITE_NOTION_DATABASE_APODERADOS_ID
 
 export async function post({ body, host }) {
     try {

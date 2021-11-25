@@ -95,15 +95,15 @@
 	<script src="https://js.hcaptcha.com/1/api.js?render=explicit" async defer></script>
 </svelte:head>
 
-<section class="relative h-[75rem] md:h-[35rem] bg-lightGreen" id="voluntarios">
+<section class="relative h-[75rem] md:h-[35rem] bg-lightGreen" id="apoderados">
 	<div class="h-12 bg-lightGreen curve relative -top-6" />
 	<div class="w-full grid grid-cols-1 md:grid-cols-2 px-8 md:px-24">
 		<div>
-			<h2 class="text-yellow text-6xl font-bold text-shadow-sm">
+			<h2 class="text-yellow text-6xl font-bold drop-shadow-xl ">
 				¿Quieres ser parte de esta campaña y cambiar Chile?
 			</h2>
 			<h3 class="text-5xl font-bold mt-8">
-				Inscribete y participa como voluntario para la campaña
+				Únete como apoderado de mesa para este 19 de Diciembre
 			</h3>
 		</div>
 		<form class="px-8 pt-8 md:pt-0 md:px-24 w-full" on:submit|preventDefault={submitForm}>
@@ -148,7 +148,7 @@
 			<button
 				type="submit"
 				class="h-captcha bg-yellow text-4xl font-bold flex items-center justify-center mt-2 py-2 w-full rounded-sm drop-shadow-xl hover:bg-mindaro-700"
-				disabled={submitting}>#seguimos</button
+				disabled={submitting}>Participa</button
 			>
 			<p class="text-green font-bold text-3xl py-2">{submitMessage}</p>
 		</form>

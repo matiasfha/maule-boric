@@ -30,7 +30,9 @@ const config = {
 		},
 	},
 
-	plugins: []
+	plugins: [
+		  require('tailwindcss-textshadow')
+	]
 };
 
 module.exports = config;

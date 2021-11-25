@@ -18,8 +18,6 @@ export async function get() {
                 date: properties.Date.date.start,
                 address: properties.Direccion.rich_text[0].plain_text,
                 name: properties.Name.title[0].plain_text,
-                hour: properties.Hora.date.start,
-                day: new Date(properties.Date.date.start).getUTCDate()
             }
         })
         return {
@@ -27,6 +25,10 @@ export async function get() {
         }
     } catch (error) {
         console.error(error.body)
+        return  {
+            status: 500,
+            body: error
+        }
     }
 
 }
