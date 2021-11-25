@@ -12,8 +12,8 @@
 
 <main class="w-full bg-blue">
 	<section class="h-[35rem] flex flex-col items-center justify-center hero">
-		<h1 class="font-bold text-7xl text-yellow text-shadow-lg px-8 md:px-0">
-			2.650 apoderades se necesitan en el Maule
+		<h1 class="font-bold text-5xl md:text-7xl text-yellow text-shadow-lg px-8 md:px-0 text-center">
+			2.650 apoderados y apodedaradas se necesitan en el Maule
 		</h1>
 		<a
 			href="#apoderados"
@@ -23,10 +23,10 @@
 	</section>
 	<SectionVolunteer onSubmit={submitVolunteer} />
 
-	<section class="h-[58rem] md:h-[35rem] relative bg-blue">
+	<section class="h-[82rem] md:h-[35rem] relative bg-blue">
 		<div class="h-12 bg-blue curve relative -top-10" />
 		<div class="grid grid-cols-1 px-8 md:px-48 ">
-			<h2 class="text-yellow text-6xl font-extrabold drop-shadow-xl">
+			<h2 class="text-yellow text-5xl md:text-6xl font-extrabold drop-shadow-xl">
 				¿Qué hace un apoderada u apoderado?
 			</h2>
 			<p class="text-gray-600 text-xl py-4">
@@ -63,7 +63,7 @@
 	<section class="hero2 h-[40rem] bg-cover relative" />
 	<section class="h-[45rem] md:h-[30rem] relative bg-lightGreen">
 		<div class="h-12 bg-lightGreen curve relative -top-10" />
-		<div class="grid grid-cols-1 md:grid-cols-3 px-4 md:px-48  py-12">
+		<div class="grid grid-cols-1 md:grid-cols-3 px-4 md:px-48  md:py-12">
 			<div>
 				<h2 class="text-2xl text-yellow font-bold pb-4 text-center text-shadow-sm">
 					2.650 APODERADOS y APODERADAS

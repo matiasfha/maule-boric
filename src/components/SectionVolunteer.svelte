@@ -48,7 +48,6 @@
 	let hcaptcha = { execute: async (_a, _b) => ({ response: '' }), render: (_a, _b) => {} };
 	let hcaptchaWidgetID;
 	let hcaptchSiteKey = import.meta.env.VITE_HCAPTCHA_SITEKEY;
-	console.log({ hcaptchSiteKey });
 
 	onMount(() => {
 		if (browser) {

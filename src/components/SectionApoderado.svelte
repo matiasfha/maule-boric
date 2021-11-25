@@ -99,14 +99,14 @@
 	<div class="h-12 bg-lightGreen curve relative -top-6" />
 	<div class="w-full grid grid-cols-1 md:grid-cols-2 px-8 md:px-24">
 		<div>
-			<h2 class="text-yellow text-6xl font-bold drop-shadow-xl ">
+			<h2 class="text-yellow text-5xl md:text-6xl font-bold drop-shadow-xl ">
 				¿Quieres ser parte de esta campaña y cambiar Chile?
 			</h2>
-			<h3 class="text-5xl font-bold mt-8">
+			<h3 class="text-4xl md:text-5xl font-bold mt-8">
 				Únete como apoderado de mesa para este 19 de Diciembre
 			</h3>
 		</div>
-		<form class="px-8 pt-8 md:pt-0 md:px-24 w-full" on:submit|preventDefault={submitForm}>
+		<form class="px-0 pt-8 md:pt-0 md:px-24 w-full" on:submit|preventDefault={submitForm}>
 			<input
 				class="form-input mt-1 block w-full h-16 mb-8 rounded-md p-2 font-sans focus:outline-none focus:ring ring-green"
 				placeholder="Tu Nombre"

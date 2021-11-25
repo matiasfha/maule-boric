@@ -44,7 +44,7 @@
 					<a on:click={() => (open = false)} href="/#calendario">Calendario Actividades</a>
 				</li>
 				<li class="text-yellow pl-6 font-bold pt-4">
-					<a on:click={() => (open = false)} href="/">Apoderados</a>
+					<a on:click={() => (open = false)} href="/apoderados">Apoderados</a>
 				</li>
 				<li class="text-yellow pl-6 font-bold pt-4">
 					<a
