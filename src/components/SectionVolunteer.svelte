@@ -48,6 +48,7 @@
 	let hcaptcha = { execute: async (_a, _b) => ({ response: '' }), render: (_a, _b) => {} };
 	let hcaptchaWidgetID;
 	let hcaptchSiteKey = import.meta.env.VITE_HCAPTCHA_SITEKEY;
+	console.log({ hcaptchSiteKey });
 
 	onMount(() => {
 		if (browser) {
@@ -99,7 +100,7 @@
 	<div class="h-12 bg-lightGreen curve relative -top-6" />
 	<div class="w-full grid grid-cols-1 md:grid-cols-2 px-8 md:px-24">
 		<div>
-			<h2 class="text-yellow text-6xl font-bold text-shadow-sm">
+			<h2 class="text-yellow text-6xl font-bold text-shadow-sm.">
 				¿Quieres ser parte de esta campaña y cambiar Chile?
 			</h2>
 			<h3 class="text-5xl font-bold mt-8">
