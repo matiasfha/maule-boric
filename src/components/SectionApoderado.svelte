@@ -4,7 +4,6 @@
 	import { onDestroy, onMount } from 'svelte';
 
 	const comunas = [
-		'Selecciona tu comuna',
 		'Cauquenes',
 		'Chanco',
 		'Pelluhue',
@@ -40,7 +39,7 @@
 
 	let name = '';
 	let email = '';
-	let comuna = '';
+	let comuna = undefined;
 	let phone = '';
 	let submitting = false;
 	let submitMessage = '';
@@ -134,6 +133,7 @@
 				bind:value={comuna}
 				required={true}
 			>
+				<option value="" disabled selected>Selecciona tu Comuna</option>
 				{#each comunas as comuna}
 					<option value={comuna}>{comuna}</option>
 				{/each}
