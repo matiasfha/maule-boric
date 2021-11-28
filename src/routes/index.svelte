@@ -58,7 +58,7 @@
 	</section>
 
 	<!-- APODERADOS -->
-	<section class="h-[82rem] md:h-[55rem] relative bg-lightGreen">
+	<section class="h-[120rem] md:h-[55rem] relative bg-lightGreen">
 		<div class="h-12 bg-lightGreen curve relative -top-10" />
 		<div class="grid grid-cols-1 px-8 md:px-48 items-center justify-center">
 			<h1
@@ -100,13 +100,13 @@
 					firmar un documento de su participación durante la misma</strong
 				>. Se participará en un local de votación el cual se le comunicará posterior a la
 				inscripción como apoderade voluntario.
-			</p>
 
-			<button
-				on:click={handleClick}
-				class="mx-auto bg-yellow text-2xl font-bold flex items-center justify-center py-2 w-96 px-8 mt-12 rounded-md drop-shadow-xl hover:bg-mindaro-700"
-				>Participa como Apoderado</button
-			>
+				<button
+					on:click={handleClick}
+					class="bg-yellow text-2xl font-bold flex items-center justify-center py-2 w-full md:w-96 px-2 md:px-8 mt-12 rounded-md drop-shadow-xl hover:bg-mindaro-700 md:mx-auto"
+					>Participa como Apoderado</button
+				>
+			</p>
 		</div>
 	</section>
 

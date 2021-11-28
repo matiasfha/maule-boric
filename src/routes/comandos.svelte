@@ -28,6 +28,11 @@
 		background-size: cover;
 		background-repeat: no-repeat;
 	}
+	@media (max-width: 640px) {
+		.hero {
+			background-position: 50% 50%;
+		}
+	}
 	.hero2 {
 		background-image: url('../assets/banderazo.jpg');
 		background-size: cover;
