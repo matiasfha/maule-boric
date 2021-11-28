@@ -16,9 +16,9 @@
 					>Programa</a
 				>
 			</li>
-			<li class="text-yellow pl-6 font-bold"><a href="/#voluntarios">Voluntarios</a></li>
+			<li class="text-yellow pl-6 font-bold"><a href="/comandos">Registra tu comando</a></li>
 			<li class="text-yellow pl-6 font-bold"><a href="/#calendario">Calendario Actividades</a></li>
-			<li class="text-yellow pl-6 font-bold"><a href="/">Apoderados</a></li>
+
 			<li class="text-yellow pl-6 font-bold">
 				<a href="https://drive.google.com/drive/folders/1vwqqSnxHIyv9wI617h8pUers1OudaBo0"
 					>Kit Gráfico</a
@@ -38,14 +38,12 @@
 					>
 				</li>
 				<li class="text-yellow pl-6 font-bold pt-4">
-					<a on:click={() => (open = false)} href="/#voluntarios">Voluntarios</a>
+					<a on:click={() => (open = false)} href="/comandos">Registra tu Comando</a>
 				</li>
 				<li class="text-yellow pl-6 font-bold pt-4">
 					<a on:click={() => (open = false)} href="/#calendario">Calendario Actividades</a>
 				</li>
-				<li class="text-yellow pl-6 font-bold pt-4">
-					<a on:click={() => (open = false)} href="/">Apoderados</a>
-				</li>
+
 				<li class="text-yellow pl-6 font-bold pt-4">
 					<a
 						on:click={() => (open = false)}
@@ -70,11 +68,6 @@
 <slot />
 <footer class="bg-green pt-12 pb-4 flex items-center  justify-between flex-col relative">
 	<img src={Logo} alt="Boric Presidente" class="h-52" />
-	<p class="absolte bottom-0 text-sm">
-		This site is protected by hCaptcha and its
-		<a href="https://hcaptcha.com/privacy">Privacy Policy</a> and
-		<a href="https://hcaptcha.com/terms">Terms of Service</a> apply.
-	</p>
 </footer>
 
 <style>

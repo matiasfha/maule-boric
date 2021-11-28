@@ -41,6 +41,17 @@ export async function post({ body, host }) {
                 },
                 ],
             },
+            Coordinador: {
+                type: 'rich_text',
+                rich_text: [{
+                    type: 'text',
+                    text: {
+                        content: params.coordinador,
+                    }
+                    
+                }]
+                
+            },
             Comuna: {
                 type: 'rich_text',
                 rich_text: [{

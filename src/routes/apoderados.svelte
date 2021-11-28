@@ -13,7 +13,7 @@
 	</Modals>
 	<section class="h-[35rem] flex flex-col items-center justify-center hero">
 		<h1 class="font-bold text-5xl md:text-7xl text-yellow text-shadow-lg px-8 md:px-0 text-center">
-			2.650 apoderados y apodedaradas se necesitan en el Maule
+			1.790 apoderados y apodedaradas se necesitan en el el distrito 17.
 		</h1>
 		<button
 			on:click={handleClick}

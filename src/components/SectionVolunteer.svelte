@@ -40,6 +40,7 @@
 	let email = '';
 	let comuna = undefined;
 	let phone = '';
+	let coordinador = '';
 	let submitting = false;
 	let submitMessage = '';
 
@@ -76,6 +77,7 @@
 				email,
 				comuna,
 				phone,
+				coordinador,
 				captchaToken: response
 			});
 
@@ -93,35 +95,40 @@
 	<script src="https://js.hcaptcha.com/1/api.js?render=explicit" async defer></script>
 </svelte:head>
 
-<section class="relative h-[75rem] md:h-[35rem] bg-lightGreen" id="voluntarios">
+<section class="relative h-[75rem] md:h-[40rem] bg-lightGreen" id="voluntarios">
 	<div class="h-12 bg-lightGreen curve relative -top-6" />
 	<div class="w-full grid grid-cols-1 md:grid-cols-2 px-8 md:px-24">
 		<div>
 			<h2 class="text-yellow text-6xl font-bold text-shadow-sm.">
 				¿Quieres ser parte de esta campaña y cambiar Chile?
 			</h2>
-			<h3 class="text-5xl font-bold mt-8">
-				Inscribete y participa como voluntario para la campaña
-			</h3>
+			<h3 class="text-5xl font-bold mt-8">Registra tu comando!</h3>
 		</div>
 		<form class="px-8 pt-8 md:pt-0 md:px-24 w-full" on:submit|preventDefault={submitForm}>
 			<input
 				class="form-input mt-1 block w-full h-16 mb-8 rounded-md p-2 font-sans focus:outline-none focus:ring ring-green"
-				placeholder="Tu Nombre"
+				placeholder="Nombre del comando"
 				type="text"
 				required={true}
 				bind:value={name}
 			/>
 			<input
 				class="form-input mt-1 block w-full h-16 mb-8 rounded-md p-2 font-sans focus:outline-none focus:ring ring-green"
-				placeholder="Email"
+				placeholder="Nombre coordinador"
+				type="text"
+				required={true}
+				bind:value={coordinador}
+			/>
+			<input
+				class="form-input mt-1 block w-full h-16 mb-8 rounded-md p-2 font-sans focus:outline-none focus:ring ring-green"
+				placeholder="Email coordinador"
 				type="email"
 				required={true}
 				bind:value={email}
 			/>
 			<input
 				class="form-input mt-1 block w-full h-16 mb-8 rounded-md p-2 font-sans focus:outline-none focus:ring ring-green"
-				placeholder="Teléfono"
+				placeholder="Teléfono de contacto"
 				type="phone"
 				required={true}
 				bind:value={phone}
