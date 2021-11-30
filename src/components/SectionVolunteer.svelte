@@ -64,13 +64,14 @@
 	onDestroy(() => {
 		if (browser) {
 			hcaptcha = { execute: async () => ({ response: '' }), render: () => {} };
+			hcaptcha;
 		}
 	});
 
 	const submitForm = async () => {
 		try {
 			submitting = true;
-
+			console.log(hcaptcha);
 			const { response, key } = await hcaptcha.execute(hcaptchaWidgetID, { async: true });
 
 			const result = await onSubmit({
@@ -149,7 +150,7 @@
 			<div
 				id="hcaptcha"
 				class="h-captcha"
-				data-sitekey={hcaptchaSiteKey}
+				data-sitekey="3309f4bc-cb3c-43e0-90b5-335e5e69f17e"
 				data-size="invisible"
 				data-theme="dark"
 			/>

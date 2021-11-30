@@ -1,31 +1,15 @@
 import { Client } from "@notionhq/client"
+import {verify}  from 'hcaptcha';
+
+const secret = import.meta.env.VITE_HCAPTCHA_SECRETKEY;
+
 
 const notion = new Client({ auth: import.meta.env.VITE_NOTION_TOKEN ?? '' })
 
 const databaseId = import.meta.env.VITE_NOTION_DATABASE_VOLUNTARIOS_ID
 
-export async function post({ body, host }) {
-    try {
-
-        const params = JSON.parse(body)
-
-        const {captchaToken } = params
-        const recaptchaVerifyResponse = await fetch(
-        `https://hcaptcha.com/siteverify?response=${captchaToken}&secret=${import.meta.env.VITE_HCAPTCHA_SECRETKEY}&sitekey=${import.meta.env.VITE_HCAPTCHA_SITEKEY}`,
-            {
-                method: 'POST'
-            }
-        );
-
-        const json = await recaptchaVerifyResponse.json();
-
-        if (!json.success) {
-            return {
-                status: 400,
-                body: 'ReCAPTCHA failed. Please try again'
-            };
-        }
-        const response = await notion.pages.create({
+const storeInNotion = async (params) => {
+    const response = await notion.pages.create({
         parent: {
             database_id: databaseId
         },
@@ -71,17 +55,63 @@ export async function post({ body, host }) {
             }
         },
     });
-    return {
-        body: {
-            success: response
+}
+
+export async function post({ body, host }) {
+    try {
+         const params = JSON.parse(body)
+
+        const {captchaToken } = params
+        const recaptchaVerifyResponse = await fetch(
+        `https://hcaptcha.com/siteverify?response=${captchaToken}&secret=${import.meta.env.VITE_HCAPTCHA_SECRETKEY}&sitekey=${import.meta.env.VITE_HCAPTCHA_SITEKEY}`,
+            {
+                method: 'POST'
+            }
+        );
+        
+
+        const json = await recaptchaVerifyResponse.json();
+        if(json.success) {
+            const res = await storeInNotion(params)
+                return {
+                    body: {
+                        success: res
+                    }
+                }
+        }else{
+                return {
+                    status: 400,
+                    body: 'ReCAPTCHA failed. Please try again'
+                };        
         }
-    }
-    } catch (error) {
+        // await verify(secret, captchaToken)
+        // .then(async (data) => {
+        //     if (data.success === true) {
+        //         const res = await storeInNotion(params)
+        //         return {
+        //             body: {
+        //                 success: res
+        //             }
+        //         }
+        //     } else {
+        //         return {
+        //             status: 400,
+        //             body: 'ReCAPTCHA failed. Please try again'
+        //         };    
+        //     }
+        // })
+        // .catch( (error)  => {
+        //     console.error(error.body)
+        //     return {
+        //         status: 500,
+        //         body: error
+        //     }
+        // })
+    }catch(error) {
         console.error(error.body)
         return {
             status: 500,
             body: error
         }
     }
-
 }
