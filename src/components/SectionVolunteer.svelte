@@ -44,16 +44,16 @@
 	let submitting = false;
 	let submitMessage = '';
 
-	let hcaptcha = { execute: async (_a, _b) => ({ response: '' }), render: (_a, _b) => {} };
+	$: hcaptcha = { execute: async (_a, _b) => ({ response: '' }), render: (_a, _b) => {} };
 	let hcaptchaWidgetID;
-	let hcaptchSiteKey = import.meta.env.VITE_HCAPTCHA_SITEKEY;
+	let hcaptchaSiteKey = import.meta.env.VITE_HCAPTCHA_SITEKEY;
 
 	onMount(() => {
 		if (browser) {
 			hcaptcha = window.hcaptcha;
 			if (hcaptcha.render) {
 				hcaptchaWidgetID = hcaptcha.render('hcaptcha', {
-					sitekey: import.meta.env.VITE_HCAPTCHA_SITEKEY,
+					sitekey: hcaptchaSiteKey,
 					size: 'invisible',
 					theme: 'dark'
 				});
@@ -70,6 +70,7 @@
 	const submitForm = async () => {
 		try {
 			submitting = true;
+
 			const { response, key } = await hcaptcha.execute(hcaptchaWidgetID, { async: true });
 
 			const result = await onSubmit({
@@ -80,6 +81,7 @@
 				coordinador,
 				captchaToken: response
 			});
+			console.log(result);
 
 			submitMessage = 'Gracias por unirte!';
 		} catch (e) {
@@ -147,7 +149,7 @@
 			<div
 				id="hcaptcha"
 				class="h-captcha"
-				data-sitekey={hcaptchSiteKey}
+				data-sitekey={hcaptchaSiteKey}
 				data-size="invisible"
 				data-theme="dark"
 			/>
