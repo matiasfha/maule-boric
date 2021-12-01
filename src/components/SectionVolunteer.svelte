@@ -71,7 +71,7 @@
 	const submitForm = async () => {
 		try {
 			submitting = true;
-			console.log(hcaptcha);
+
 			const { response, key } = await hcaptcha.execute(hcaptchaWidgetID, { async: true });
 
 			const result = await onSubmit({
