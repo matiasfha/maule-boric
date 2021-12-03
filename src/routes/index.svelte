@@ -151,7 +151,7 @@
 		<div class="grid grid-cols-1 md:grid-cols-3 px-4 md:px-48  md:py-12">
 			<div>
 				<h2 class="text-2xl text-yellow font-bold pb-4 text-center text-shadow-sm">
-					2.650 APODERADOS y APODERADAS
+					1.790 APODERADOS y APODERADAS
 				</h2>
 				<p class="text-center text-gray-600">
 					Es lo que se necesita para defender voto a voto el Chile que queremos.
@@ -160,7 +160,7 @@
 			</div>
 			<div>
 				<h2 class="text-2xl text-yellow font-bold pb-4 text-center text-shadow-sm">
-					155 LOCALES DE VOTACIÓN
+					100 LOCALES DE VOTACIÓN
 				</h2>
 				<p class="text-center text-gray-600">
 					Serán los existentes en el Maule el 25 de octubre. Debemos tener apoderades en cada uno de
@@ -171,7 +171,7 @@
 
 			<div>
 				<h2 class="text-2xl text-yellow font-bold pb-4 text-center text-shadow-sm">
-					809.528 VOTANTES
+					892.246 VOTANTES
 				</h2>
 				<p class="text-center text-gray-600">Son los habilitades a votar en la Región del Maule.</p>
 			</div>

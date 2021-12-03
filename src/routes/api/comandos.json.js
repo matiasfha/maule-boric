@@ -6,9 +6,9 @@ const secret = import.meta.env.VITE_HCAPTCHA_SECRETKEY;
 
 const notion = new Client({ auth: import.meta.env.VITE_NOTION_TOKEN ?? '' })
 
-const databaseId = import.meta.env.VITE_NOTION_DATABASE_VOLUNTARIOS_ID
+const databaseId = import.meta.env.VITE_NOTION_DATABASE_COMANDOS_ID
 
-const storeInNotion = async (params) => { 
+const storeInNotion = async (params) => {
     const response = await notion.pages.create({
         parent: {
             database_id: databaseId
@@ -24,6 +24,17 @@ const storeInNotion = async (params) => {
                     },
                 },
                 ],
+            },
+            Coordinador: {
+                type: 'rich_text',
+                rich_text: [{
+                    type: 'text',
+                    text: {
+                        content: params.coordinador,
+                    }
+                    
+                }]
+                
             },
             Comuna: {
                 type: 'rich_text',

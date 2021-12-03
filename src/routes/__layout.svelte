@@ -17,6 +17,7 @@
 				>
 			</li>
 			<li class="text-yellow pl-6 font-bold"><a href="/comandos">Registra tu comando</a></li>
+			<li class="text-yellow pl-6 font-bold"><a href="/voluntarios">Voluntarios</a></li>
 			<li class="text-yellow pl-6 font-bold"><a href="/#calendario">Calendario Actividades</a></li>
 
 			<li class="text-yellow pl-6 font-bold">
@@ -39,6 +40,9 @@
 				</li>
 				<li class="text-yellow pl-6 font-bold pt-4">
 					<a on:click={() => (open = false)} href="/comandos">Registra tu Comando</a>
+				</li>
+				<li class="text-yellow pl-6 font-bold pt-4">
+					<a on:click={() => (open = false)} href="/voluntarios">Voluntarios</a>
 				</li>
 				<li class="text-yellow pl-6 font-bold pt-4">
 					<a on:click={() => (open = false)} href="/#calendario">Calendario Actividades</a>

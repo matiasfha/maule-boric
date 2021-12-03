@@ -23,6 +23,8 @@
 	onMount(async () => {
 		await import('@fullcalendar/core/vdom');
 		const { Calendar } = await import('@fullcalendar/core');
+		const locale = await import('@fullcalendar/core/locales/es');
+
 		/** @type {import('@fullcalendar/core').CalendarOptions}  */
 		const options = {
 			initialView: 'dayGridMonth',
@@ -34,18 +36,27 @@
 			firstDay: 1,
 			events,
 			eventDidMount: (info) => {
-				tippy(info.el, {
-					content: `${info.event.extendedProps.comuna} - ${info.event.extendedProps.direccion} - Contact: ${info.event.extendedProps.contacto}`,
-					animation: 'scale'
-				});
+				const { comuna, direccion, contact } = info.event.extendedProps;
+				const comunaText = comuna ? `<strong>Comuna:</strong> ${comuna}<br />` : '';
+				const direccionText = direccion ? `<strong>Dirección:</strong> ${direccion}<br />` : '';
+				const contactText = contact ? `<strong>Contacto:</strong> ${contact}` : '';
+				const text = `${comunaText} ${direccionText} ${contactText}`;
+
+				if (text != '  ') {
+					return tippy(info.el, {
+						content: text,
+						animation: 'scale',
+						allowHTML: true
+					});
+				}
+				return null;
 			},
 			plugins: [
 				(await import('@fullcalendar/daygrid')).default,
 				(await import('@fullcalendar/list')).default
 			],
-			themeSystem: 'standard'
-
-			//locale: await import('@fullcalendar/core/locales/es')
+			themeSystem: 'standard',
+			locale: locale.default
 		};
 		/** @type {import('@fullcalendar/core').Calendar}  */
 		let renderCalendar = new Calendar(calendarEl, options);

@@ -94,16 +94,14 @@
 	};
 </script>
 
-<section class="relative h-[55rem] md:h-[40rem] bg-lightGreen" id="voluntarios">
+<secton class="relative h-[55rem] md:h-[40rem] bg-lightGreen" id="voluntarios">
 	<div class="h-12 bg-lightGreen curve relative -top-6" />
 	<div class="w-full grid grid-cols-1 md:grid-cols-2 px-8 md:px-24">
 		<div>
 			<h2 class="text-yellow text-4xl md:text-6xl font-bold text-shadow-sm">
 				¿Quieres ser parte de esta campaña y cambiar Chile?
 			</h2>
-			<h3 class="text-3xl md:text-5xl font-bold mt-8">
-				Registrate como voluntarios y participa de las actividades
-			</h3>
+			<h3 class="text-3xl md:text-5xl font-bold mt-8">Registra tu comando!</h3>
 		</div>
 		<form class="pt-8 md:pt-0 md:px-24 w-full" on:submit|preventDefault={submitForm}>
 			<input
@@ -112,6 +110,13 @@
 				type="text"
 				required={true}
 				bind:value={name}
+			/>
+			<input
+				class="form-input mt-1 block w-full h-16 mb-8 rounded-md p-2 font-sans focus:outline-none focus:ring ring-green"
+				placeholder="Nombre coordinador"
+				type="text"
+				required={true}
+				bind:value={coordinador}
 			/>
 			<input
 				class="form-input mt-1 block w-full h-16 mb-8 rounded-md p-2 font-sans focus:outline-none focus:ring ring-green"

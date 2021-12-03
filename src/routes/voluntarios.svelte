@@ -3,10 +3,10 @@
 </script>
 
 <script>
-	import SectionComandos from '../components/SectionComandos.svelte';
+	import SectionVoluntarios from '../components/SectionVolunteer.svelte';
 
 	const onSubmit = async (data) => {
-		const submit = await fetch('/api/comandos.json', {
+		const submit = await fetch('/api/voluntarios.json', {
 			method: 'POST',
 			body: JSON.stringify(data)
 		});
@@ -15,16 +15,16 @@
 </script>
 
 <svelte:head>
-	<title>Maule con Boric - Registro de Comandos</title>
+	<title>Maule con Boric - Registro de Voluntarios</title>
 </svelte:head>
 
 <main class="w-full bg-lightGreen">
 	<section class="h-[35rem] flex flex-col items-center justify-center hero">
 		<h1 class="font-bold text-5xl md:text-7xl text-yellow text-shadow-lg px-8 md:px-0 text-center">
-			Registra tu comando y únete al cambio
+			Registrate como voluntario!
 		</h1>
 	</section>
-	<SectionComandos {onSubmit} />
+	<SectionVoluntarios {onSubmit} />
 
 	<section class="hero2 h-[40rem] bg-cover relative bg-lightGreen" />
 </main>
