@@ -94,7 +94,7 @@
 	};
 </script>
 
-<secton class="relative h-[55rem] md:h-[40rem] bg-lightGreen" id="voluntarios">
+<section class="relative h-[55rem] md:h-[40rem] bg-lightGreen" id="voluntarios">
 	<div class="h-12 bg-lightGreen curve relative -top-6" />
 	<div class="w-full grid grid-cols-1 md:grid-cols-2 px-8 md:px-24">
 		<div>
