@@ -19,8 +19,10 @@
 </svelte:head>
 
 <main class="w-full bg-lightGreen">
-	<section class="h-[35rem] flex flex-col items-center justify-center hero">
-		<h1 class="font-bold text-5xl md:text-7xl text-yellow text-shadow-lg px-8 md:px-0 text-center">
+	<section class="h-[30rem] md:h-[50rem] flex flex-col items-center justify-center hero">
+		<h1
+			class="font-bold text-5xl md:text-7xl text-yellow text-shadow-lg px-8 md:px-0 text-center hidden md:block"
+		>
 			Registrate como voluntario!
 		</h1>
 	</section>
@@ -31,14 +33,14 @@
 
 <style>
 	.hero {
-		background-image: url('../assets/comandos.jpeg');
-		background-position-y: 70%;
+		background-image: url('../assets/voluntarios.jpeg');
+		background-position-y: 69%;
 		background-size: cover;
 		background-repeat: no-repeat;
 	}
 	@media (max-width: 640px) {
 		.hero {
-			background-position: 50% 50%;
+			background-position: 50% 10%;
 		}
 	}
 	.hero2 {

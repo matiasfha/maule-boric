@@ -40,7 +40,7 @@
 	let email = '';
 	let comuna = undefined;
 	let phone = '';
-	let coordinador = '';
+	let direction = '';
 	let submitting = false;
 	let submitMessage = '';
 
@@ -79,7 +79,7 @@
 				email,
 				comuna,
 				phone,
-				coordinador,
+				direction,
 				captchaToken: response
 			});
 			console.log(result);
@@ -115,7 +115,7 @@
 			/>
 			<input
 				class="form-input mt-1 block w-full h-16 mb-8 rounded-md p-2 font-sans focus:outline-none focus:ring ring-green"
-				placeholder="Email coordinador"
+				placeholder="Email"
 				type="email"
 				required={true}
 				bind:value={email}
@@ -138,6 +138,13 @@
 					<option value={comuna}>{comuna}</option>
 				{/each}
 			</select>
+			<input
+				class="form-input mt-1 block w-full h-16 mb-8 rounded-md p-2 font-sans focus:outline-none focus:ring ring-green"
+				placeholder="Dirección"
+				type="dirección"
+				required={true}
+				bind:value={direction}
+			/>
 			<div
 				id="hcaptcha"
 				class="h-captcha"

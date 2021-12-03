@@ -41,6 +41,16 @@ const storeInNotion = async (params) => {
             },
             Telefono: {
                 phone_number: params.phone
+            },
+            Direccion: {
+                type: 'rich_text',
+                rich_text: [{
+                    type: 'text',
+                    text: {
+                        content: params.direction,
+                    }
+                    
+                }]
             }
         },
     });
