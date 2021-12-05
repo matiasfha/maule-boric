@@ -18,6 +18,7 @@ export async function get() {
                 date: properties.Date.date.start,
                 address: properties.Direccion?.rich_text?.[0]?.plain_text ?? '',
                 name: properties.Name?.title?.[0]?.plain_text ?? '',
+                cover: page.cover?.file.url ?? '',
             }
         })
         return {

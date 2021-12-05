@@ -18,7 +18,7 @@
 			</li>
 			<li class="text-yellow pl-6 font-bold"><a href="/comandos">Registra tu comando</a></li>
 			<li class="text-yellow pl-6 font-bold"><a href="/voluntarios">Voluntarios</a></li>
-			<li class="text-yellow pl-6 font-bold"><a href="/#calendario">Calendario Actividades</a></li>
+			<li class="text-yellow pl-6 font-bold"><a href="/actividades">Calendario Actividades</a></li>
 
 			<li class="text-yellow pl-6 font-bold">
 				<a href="https://drive.google.com/drive/folders/1vwqqSnxHIyv9wI617h8pUers1OudaBo0"
@@ -45,7 +45,7 @@
 					<a on:click={() => (open = false)} href="/voluntarios">Voluntarios</a>
 				</li>
 				<li class="text-yellow pl-6 font-bold pt-4">
-					<a on:click={() => (open = false)} href="/#calendario">Calendario Actividades</a>
+					<a on:click={() => (open = false)} href="/actividades">Calendario Actividades</a>
 				</li>
 
 				<li class="text-yellow pl-6 font-bold pt-4">

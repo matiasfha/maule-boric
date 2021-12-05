@@ -31,7 +31,7 @@
 			headerToolbar: {
 				left: 'prev,next',
 				center: 'title',
-				right: 'dayGridMonth,listWeek,dayGridWeek'
+				right: 'listWeek,dayGridWeek'
 			},
 			firstDay: 1,
 			events,
@@ -67,4 +67,4 @@
 	});
 </script>
 
-<div bind:this={calendarEl} class="px-4 md:px-32" />
+<div bind:this={calendarEl} class="px-4 md:px-32 w-full md:w-[80%] mx-auto" />
