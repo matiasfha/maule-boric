@@ -26,7 +26,7 @@
 	import Calendar from '../components/Calendar.svelte';
 	import { Accordion, AccordionItem } from 'svelte-accessible-accordion';
 	import { isFuture, isToday, format } from 'date-fns';
-	import { es } from 'date-fns/locale';
+	import es from 'date-fns/locale/es/index.js';
 	import { fade } from 'svelte/transition';
 
 	export let calendar = [];

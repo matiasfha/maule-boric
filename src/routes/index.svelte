@@ -27,9 +27,8 @@
 	import ApoderadosModal from '../components/ApoderadosModal.svelte';
 	import Calendar from '../components/Calendar.svelte';
 	import { Accordion, AccordionItem } from 'svelte-accessible-accordion';
-	import TestImg from '../assets/mesa-ciudadana.jpg';
 	import { isFuture, isToday, format } from 'date-fns';
-	import { es } from 'date-fns/locale';
+	import es from 'date-fns/locale/es/index.js';
 	import { fade } from 'svelte/transition';
 
 	export let calendar = [];
