@@ -41,6 +41,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@auth0/auth0-spa-js": "1.19.3",
 		"@fortawesome/fontawesome-free": "5.15.4",
 		"@fullcalendar/bootstrap": "5.10.1",
 		"@fullcalendar/core": "5.10.1",
