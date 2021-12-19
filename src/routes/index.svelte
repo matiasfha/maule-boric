@@ -82,7 +82,7 @@
 		<h1
 			class="font-bold text-7xl mix-blend-exclusion text-white bg-black text-shadow-lg px-8 md:px-0"
 		>
-			Apoderado Registra tus datos!
+			Apoderado General Registra tus datos!
 		</h1>
 		<a
 			href="/observaciones"
