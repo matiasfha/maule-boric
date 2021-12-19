@@ -72,6 +72,30 @@
 <slot />
 <footer class="bg-green pt-12 pb-4 flex items-center  justify-between flex-col relative">
 	<img src={Logo} alt="Boric Presidente" class="h-52" />
+	<p class="text-md text-yellow">
+		Hecho por <a
+			class="text-lightGreen hover:text-mindaro-800 hover:underline"
+			href="https://matiashernandez.dev">Matías Hernández</a
+		>
+		-
+		<a
+			class="text-lightGreen hover:text-mindaro-800 hover:underline"
+			href="https://twitter.com/matiasfha"
+			target="_blank">&lt;twitter: @matiasfha&gt;</a
+		>
+	</p>
+	<p class="text-md text-yellow">
+		Hecho con <a
+			href="https://kit.svelte.dev"
+			class="text-lightGreen hover:text-mindaro-800 hover:underline">SvelteKit</a
+		>
+		- Source code on
+		<a
+			href="https://github.com/matiasfha/maule-boric"
+			class="text-lightGreen hover:text-mindaro-800 hover:underline"
+			target="_blank">github</a
+		>
+	</p>
 </footer>
 
 <style>
