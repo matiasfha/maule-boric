@@ -34,7 +34,6 @@
 	export let calendar = [];
 
 	$: expanded = {};
-	console.log({ expanded });
 
 	let events = calendar
 		.filter((item) => {
@@ -83,13 +82,19 @@
 		<h1
 			class="font-bold text-7xl mix-blend-exclusion text-white bg-black text-shadow-lg px-8 md:px-0"
 		>
-			Únete al cambio que el Maule necesita
+			Apoderado Registra tus datos!
 		</h1>
-		<button
-			on:click={handleClick}
+		<a
+			href="/observaciones"
 			class="h-captcha bg-yellow text-2xl font-bold flex items-center justify-center py-2 w-96 px-8 mt-12 rounded-md drop-shadow-xl hover:bg-mindaro-700"
-			>Participa como Apoderado</button
+			>Registra tus observaciones
+		</a>
 		>
+		<a
+			href="/actas"
+			class="h-captcha bg-yellow text-2xl font-bold flex items-center justify-center py-2 w-96 px-8 mt-12 rounded-md drop-shadow-xl hover:bg-mindaro-700"
+			>Registra las Actas
+		</a>
 	</section>
 
 	<!-- APODERADOS -->
